@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <div class="container p-4">
+        <h3>Usuarios</h3>
+        <br>
+    <form action="/add" method="post">
+        <center>
+        <label for="nombre"> nombre</label>
+        <input type="text" name="nombre" placeholder="nombre">
+        <label for="apellido"> apellido</label>
+        <input type="text" name="apellido" placeholder="apellido">
+        <br> <br>
+        <button class="btn btn-primary" >Añadir</button></center>
+    </form>
+
+    <center>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% for(var i = 0; i < users.length; i++){ %>
+                <tr>
+                  <td><%- users[i].nombre %></td>
+                  <td><%- users[i].apellido %></td>
+                </tr>
+            <% } %>
+        </table>
+    </center>
+
+    </div>
+</body>
+</html>
